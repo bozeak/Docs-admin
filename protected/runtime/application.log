@@ -5300,3 +5300,11 @@ Stack trace:
 #18 C:\Program Files\Zend\Apache2\htdocs\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
 #19 D:\Sites\admin\index.php(13): CApplication->run()
 #20 {main} REQUEST_URI=/index.php?r=tDb/list&subdiv=5&date_reg=2011-11-15
+2011/11/20 08:16:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "users".' in C:\Program Files\Zend\Apache2\htdocs\yii\framework\web\CController.php:477
+Stack trace:
+#0 C:\Program Files\Zend\Apache2\htdocs\yii\framework\web\CController.php(262): CController->missingAction('users')
+#1 C:\Program Files\Zend\Apache2\htdocs\yii\framework\web\CWebApplication.php(277): CController->run('users')
+#2 C:\Program Files\Zend\Apache2\htdocs\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('site/users')
+#3 C:\Program Files\Zend\Apache2\htdocs\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#4 D:\Sites\admin\index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/index.php?r=site/users

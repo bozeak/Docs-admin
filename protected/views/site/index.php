@@ -1,38 +1,7 @@
 <?php
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-echo "Admin zone";
-
 $list = Subdiv::model()->findAll();
 ?>
-<ul>
-    <?php
-    foreach ($list as $item):
-        $conditions = 'subdiv=' . $item->id;
-        $counts = TDb::model()->count(array(
-            'condition' => $conditions,
-                ));
-        ?>
-        <li><?php echo CHtml::link(CHtml::encode($item->name), array('tDb/list', 'subdiv' => $item->id)) ?><span><?php echo ' (' . $counts . ')' ?></span></li>
-    <?php endforeach; ?>
-</ul>
-
-<ul>
-    <?php
-    foreach ($list as $item):
-        $conditions = 'subdiv=' . $item->id . ' AND date_reg="2011-11-15"';
-        $counts_month = TDb::model()->count(array(
-            'condition' => $conditions,
-                ));
-        ?>
-
-        <li><?php echo CHtml::link(CHtml::encode($item->name), array('tDb/list', 'subdiv' => $item->id, 'date_reg' => "2011-11-15")) ?><span><?php echo ' (' . $counts_month . ')' ?></span></li>
-
-    <?php endforeach; ?>
-</ul>
+<h1>Zona Administrativa</h1>
 
 <table>
     <tr>
@@ -67,3 +36,12 @@ $list = Subdiv::model()->findAll();
             <td><h2><?php $countAll=TDb::model()->count(); echo $countAll ?></h2></td>
         </tr>
 </table>
+
+<div style="float: left; text-align: center; margin: 10px;">
+    <?php echo CHtml::link('<img src="images/folder_user.png" />', array('users/admin')); ?>
+    <h2>Utilizatorii sistemului</h2>
+</div>
+<div style="text-align: center; margin: 10px;">
+    <?php echo CHtml::link('<img src="images/responsabili.png" />', array('responsabil/admin')); ?>
+    <h2>Responsabili</h2>
+</div>
