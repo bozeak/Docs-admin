@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Tipraspuns'=>array('index'),
+	//'Tipraspuns'=>array('index'),
 	'Manage',
 );
 

@@ -40,25 +40,25 @@ $list = Subdiv::model()->findAll();
 
 <table>
     <tr>
-        <td>
+        <td width="25%">
             <div style="text-align: center; margin: 10px;">
 <?php echo CHtml::link('<img src="images/folder_user.png" />', array('users/admin')); ?>
                 <h2>Utilizatorii sistemului</h2>
             </div>
         </td>
-        <td>
+        <td width="25%">
             <div style="text-align: center; margin: 10px;">
 <?php echo CHtml::link('<img src="images/responsabili.png" />', array('responsabil/admin')); ?>
                 <h2>Responsabili</h2>
             </div>
         </td>
-        <td>
+        <td width="25%">
             <div style="text-align: center; margin: 10px;">
 <?php echo CHtml::link('<img src="images/globe.png" />', array('subdiv/admin')); ?>
                 <h2>Subdiviziunile</h2>
             </div>
         </td>
-        <td>
+        <td width="25%">
             <div style="text-align: center; margin: 10px;">
 <?php echo CHtml::link('<img src="images/lists.png" />', array('tipraspuns/admin')); ?>
                 <h2>Tipurile raspunsurilor</h2>

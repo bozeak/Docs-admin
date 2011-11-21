@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Responsabils'=>array('index'),
+	//'Responsabils'=>array('index'),
 	'Manage',
 );
 
