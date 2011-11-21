@@ -24,139 +24,140 @@
  * @property string $dossier
  * @property integer $author
  */
-class TDb extends CActiveRecord
-{
-	/**
-	 * Returns the static model of the specified AR class.
-	 * @return TDb the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
+class TDb extends CActiveRecord {
 
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return 't_db';
-	}
+    /**
+     * Returns the static model of the specified AR class.
+     * @return TDb the static model class
+     */
+    public static function model($className=__CLASS__) {
+        return parent::model($className);
+    }
 
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('subdiv, nr_reg, date_reg, date_doc, elab, id_elab, address, nr_cadastr, tel, content, responsabil, get_exec, nr_respons, date_respons, respons_type, note, dossier, author', 'required'),
-			array('author', 'numerical', 'integerOnly'=>true),
-			array('subdiv, respons_type', 'length', 'max'=>2),
-			array('nr_reg', 'length', 'max'=>7),
-			array('elab, id_elab, address', 'length', 'max'=>255),
-			array('nr_cadastr', 'length', 'max'=>15),
-			array('tel', 'length', 'max'=>10),
-			array('responsabil', 'length', 'max'=>20),
-			array('nr_respons', 'length', 'max'=>150),
-			array('dossier', 'length', 'max'=>50),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('id, subdiv, nr_reg, date_reg, date_doc, elab, id_elab, address, nr_cadastr, tel, content, responsabil, get_exec, nr_respons, date_respons, respons_type, note, dossier, author', 'safe', 'on'=>'search'),
-		);
-	}
+    /**
+     * @return string the associated database table name
+     */
+    public function tableName() {
+        return 't_db';
+    }
 
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-                    
-		);
-	}
+    /**
+     * @return array validation rules for model attributes.
+     */
+    public function rules() {
+        // NOTE: you should only define rules for those attributes that
+        // will receive user inputs.
+        return array(
+            array('subdiv, nr_reg, date_reg, date_doc, elab, id_elab, address, nr_cadastr, tel, content, responsabil, get_exec, nr_respons, date_respons, respons_type, note, dossier, author', 'required'),
+            array('author', 'numerical', 'integerOnly' => true),
+            array('subdiv, respons_type', 'length', 'max' => 2),
+            array('nr_reg', 'length', 'max' => 7),
+            array('elab, id_elab, address', 'length', 'max' => 255),
+            array('nr_cadastr', 'length', 'max' => 15),
+            array('tel', 'length', 'max' => 10),
+            array('responsabil', 'length', 'max' => 20),
+            array('nr_respons', 'length', 'max' => 150),
+            array('dossier', 'length', 'max' => 50),
+            // The following rule is used by search().
+            // Please remove those attributes that should not be searched.
+            array('id, subdiv, nr_reg, date_reg, date_doc, elab, id_elab, address, nr_cadastr, tel, content, responsabil, get_exec, nr_respons, date_respons, respons_type, note, dossier, author', 'safe', 'on' => 'search'),
+        );
+    }
 
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'id' => 'ID',
-			'subdiv' => 'Subdiv',
-			'nr_reg' => 'Nr Reg',
-			'date_reg' => 'Date Reg',
-			'date_doc' => 'Date Doc',
-			'elab' => 'Elab',
-			'id_elab' => 'Id Elab',
-			'address' => 'Address',
-			'nr_cadastr' => 'Nr Cadastr',
-			'tel' => 'Tel',
-			'content' => 'Content',
-			'responsabil' => 'Responsabil',
-			'get_exec' => 'Get Exec',
-			'nr_respons' => 'Nr Respons',
-			'date_respons' => 'Date Respons',
-			'respons_type' => 'Respons Type',
-			'note' => 'Note',
-			'dossier' => 'Dossier',
-			'author' => 'Author',
-		);
-	}
+    /**
+     * @return array relational rules.
+     */
+    public function relations() {
+        // NOTE: you may need to adjust the relation name and the related
+        // class name for the relations automatically generated below.
+        return array(
+        );
+    }
 
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
+    /**
+     * @return array customized attribute labels (name=>label)
+     */
+    public function attributeLabels() {
+        return array(
+            'id' => 'ID',
+            'subdiv' => 'Subdiv',
+            'nr_reg' => 'Nr Reg',
+            'date_reg' => 'Date Reg',
+            'date_doc' => 'Date Doc',
+            'elab' => 'Elab',
+            'id_elab' => 'Id Elab',
+            'address' => 'Address',
+            'nr_cadastr' => 'Nr Cadastr',
+            'tel' => 'Tel',
+            'content' => 'Content',
+            'responsabil' => 'Responsabil',
+            'get_exec' => 'Get Exec',
+            'nr_respons' => 'Nr Respons',
+            'date_respons' => 'Date Respons',
+            'respons_type' => 'Respons Type',
+            'note' => 'Note',
+            'dossier' => 'Dossier',
+            'author' => 'Author',
+        );
+    }
 
-		$criteria=new CDbCriteria;
+    /**
+     * Retrieves a list of models based on the current search/filter conditions.
+     * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+     */
+    public function search() {
+        // Warning: Please modify the following code to remove attributes that
+        // should not be searched.
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('subdiv',$this->subdiv,true);
-		$criteria->compare('nr_reg',$this->nr_reg,true);
-		$criteria->compare('date_reg',$this->date_reg,true);
-		$criteria->compare('date_doc',$this->date_doc,true);
-		$criteria->compare('elab',$this->elab,true);
-		$criteria->compare('id_elab',$this->id_elab,true);
-		$criteria->compare('address',$this->address,true);
-		$criteria->compare('nr_cadastr',$this->nr_cadastr,true);
-		$criteria->compare('tel',$this->tel,true);
-		$criteria->compare('content',$this->content,true);
-		$criteria->compare('responsabil',$this->responsabil,true);
-		$criteria->compare('get_exec',$this->get_exec,true);
-		$criteria->compare('nr_respons',$this->nr_respons,true);
-		$criteria->compare('date_respons',$this->date_respons,true);
-		$criteria->compare('respons_type',$this->respons_type,true);
-		$criteria->compare('note',$this->note,true);
-		$criteria->compare('dossier',$this->dossier,true);
-		$criteria->compare('author',$this->author);
+        $criteria = new CDbCriteria;
 
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
-        
-        public function searchAll()
-        {
-            $criteria = new CDbCriteria;
-            if(!isset($_GET['date_reg']))
-                $criteria->condition = "subdiv=:subdiv";// AND date_reg=:date_reg
-            else
-                $criteria->condition = "subdiv=:subdiv AND date_reg=:date_reg";
-            $criteria->params = array(':subdiv'=>$_GET['subdiv'],':date_reg'=>$_GET['date_reg']);
-            $criteria->order = 'id DESC';
-            //if(isset($_GET['date_reg']))
-              //  $criteria->condition = "date_reg=2011-11-15";
-            
-            return new CActiveDataProvider($this, array(
-                'criteria'=>$criteria,
-            ));
+        $criteria->compare('id', $this->id);
+        $criteria->compare('subdiv', $this->subdiv, true);
+        $criteria->compare('nr_reg', $this->nr_reg, true);
+        $criteria->compare('date_reg', $this->date_reg, true);
+        $criteria->compare('date_doc', $this->date_doc, true);
+        $criteria->compare('elab', $this->elab, true);
+        $criteria->compare('id_elab', $this->id_elab, true);
+        $criteria->compare('address', $this->address, true);
+        $criteria->compare('nr_cadastr', $this->nr_cadastr, true);
+        $criteria->compare('tel', $this->tel, true);
+        $criteria->compare('content', $this->content, true);
+        $criteria->compare('responsabil', $this->responsabil, true);
+        $criteria->compare('get_exec', $this->get_exec, true);
+        $criteria->compare('nr_respons', $this->nr_respons, true);
+        $criteria->compare('date_respons', $this->date_respons, true);
+        $criteria->compare('respons_type', $this->respons_type, true);
+        $criteria->compare('note', $this->note, true);
+        $criteria->compare('dossier', $this->dossier, true);
+        $criteria->compare('author', $this->author);
+
+        return new CActiveDataProvider($this, array(
+                    'criteria' => $criteria,
+                ));
+    }
+
+    public function searchAll() {
+        $criteria = new CDbCriteria;
+        if (isset($_GET['date_reg'])) {
+            $criteria->condition = "subdiv=:subdiv AND date_reg=:date_reg";
+            $criteria->params = array(':subdiv' => $_GET['subdiv'], ':date_reg' => $_GET['date_reg']);
         }
+        else if (isset($_GET['month'])) {
+            $criteria->condition = "subdiv=:subdiv AND MONTH(date_reg)=:month"; // AND date_reg=:date_reg
+            $criteria->params = array(':subdiv' => $_GET['subdiv'], ':month' => $_GET['month']);
+        } else {
+            $criteria->condition = "subdiv=:subdiv";
+            $criteria->params = array(':subdiv' => $_GET['subdiv']);
+        }
+
+        //$criteria->params = array(':subdiv' => $_GET['subdiv']/* ,':date_reg'=>$_GET['date_reg'],':month'=>$_GET['month'] */);
+        $criteria->order = 'id DESC';
+        //if(isset($_GET['date_reg']))
+        //  $criteria->condition = "date_reg=2011-11-15";
+
+        return new CActiveDataProvider($this, array(
+                    'criteria' => $criteria,
+                ));
+    }
+
 }

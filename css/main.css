@@ -227,3 +227,37 @@ div.search-form
 {
 	background: #80CFFF;
 }
+
+#main_table {
+    width: 450px;
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #D0E3EF;
+    border-collapse: collapse;
+}
+
+#main_table th {
+    background: url("bg.gif") repeat-x scroll left top white;
+    color: white;
+    text-align: center;
+    border: 1px solid white;
+}
+
+#main_table td {
+    border: 1px solid white;
+}
+
+tr {
+    background-color: #EEEEEE;
+}
+
+.odd {
+   background: #C3D9FF;
+}
+
+.even {
+    background: #EEEEEE;
+}
+
+.centering {
+    text-align: center;
+}
