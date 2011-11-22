@@ -19,5 +19,7 @@
  * @version $Id: $
  */
 return array (
+  'Create Users' => 'Adaugă utilizator',
+  'Update Users' => 'Modifică utilizator',
   'Zona Administrativa' => '',
 );

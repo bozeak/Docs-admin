@@ -8,6 +8,8 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Zona de administrare a registrului de evidenta a documentelor',
+        'sourceLanguage'=>'en_US',
+	'language'=>'ro',
 
 	// preloading 'log' component
 	'preload'=>array('log'),

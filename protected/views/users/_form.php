@@ -23,13 +23,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'rid'); ?>
-		<?php echo $form->textField($model,'rid'); ?>
+		<?php echo $form->dropDownList($model,'rid', CHtml::listData(Roles::model()->findAll(), 'rid', 'rid_name'), array('empty'=>'--Alegeti--')); ?>
 		<?php echo $form->error($model,'rid'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'subdiv'); ?>
-		<?php echo $form->textField($model,'subdiv'); ?>
+		<?php echo $form->dropDownList($model,'subdiv', CHtml::listData(Subdiv::model()->findAll(), 'id', 'name'), array('empty'=>'--Alegeti--')); ?>
 		<?php echo $form->error($model,'subdiv'); ?>
 	</div>
 

@@ -1,24 +1,17 @@
 <?php
 
 /**
- * This is the model class for table "u_users".
+ * This is the model class for table "u_roles".
  *
- * The followings are the available columns in table 'u_users':
- * @property integer $uid
- * @property string $login
- * @property string $password
+ * The followings are the available columns in table 'u_roles':
  * @property integer $rid
- * @property integer $subdiv
- *
- * The followings are the available model relations:
- * @property ISubdiv $subdiv0
- * @property URoles $r
+ * @property string $rid_name
  */
-class Users extends CActiveRecord
+class Roles extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @return Users the static model class
+	 * @return Roles the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -30,7 +23,7 @@ class Users extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'u_users';
+		return 'u_roles';
 	}
 
 	/**
@@ -41,12 +34,11 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('login, password, rid, subdiv', 'required'),
-			array('rid, subdiv', 'numerical', 'integerOnly'=>true),
-			array('login, password', 'length', 'max'=>255),
+			array('rid_name', 'required'),
+			array('rid_name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('uid, login, password, rid, subdiv', 'safe', 'on'=>'search'),
+			array('rid, rid_name', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,8 +50,6 @@ class Users extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'subdiv0' => array(self::BELONGS_TO, 'Subdiv', 'subdiv'),
-			'r' => array(self::BELONGS_TO, 'Roles', 'rid'),
 		);
 	}
 
@@ -69,11 +59,8 @@ class Users extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'uid' => 'Id',
-			'login' => 'Login',
-			'password' => 'Parola',
-			'rid' => 'Rolul în sistem',
-			'subdiv' => 'Subdiviziunea',
+			'rid' => 'Rid',
+			'rid_name' => 'Rid Name',
 		);
 	}
 
@@ -88,11 +75,8 @@ class Users extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('uid',$this->uid);
-		$criteria->compare('login',$this->login,true);
-		$criteria->compare('password',$this->password,true);
 		$criteria->compare('rid',$this->rid);
-		$criteria->compare('subdiv',$this->subdiv);
+		$criteria->compare('rid_name',$this->rid_name,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

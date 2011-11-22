@@ -1,9 +1,5 @@
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('uid')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->uid), array('view', 'id'=>$data->uid)); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('login')); ?>:</b>
 	<?php echo CHtml::encode($data->login); ?>
 	<br />
@@ -13,11 +9,11 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('rid')); ?>:</b>
-	<?php echo CHtml::encode($data->rid); ?>
+	<?php echo CHtml::encode($data->r->rid_name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('subdiv')); ?>:</b>
-	<?php echo CHtml::encode($data->subdiv); ?>
+	<?php echo CHtml::encode($data->subdiv0->name); ?>
 	<br />
 
 
