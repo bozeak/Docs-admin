@@ -19,12 +19,15 @@
  * @version $Id: $
  */
 return array (
+  'Home' => 'Pagina principală',
+  'Login' => 'Logare',
+  'Logout' => 'Ieșire',
+  'Zona Administrativa' => '',
+  'Create Users' => 'Adaugă utilizator',
   'Delete Users' => 'Șterge utilizator',
   'Manage' => 'Administrare',
   'Manage Users' => 'Administrează utilizatorii',
+  'Update Users' => 'Modifică utilizator',
   'Users' => 'Utilizatori',
   'View User' => 'Vizualizează',
-  'Zona Administrativa' => '',
-  'Create Users' => 'Adaugă utilizator',
-  'Update Users' => 'Modifică utilizator',
 );
