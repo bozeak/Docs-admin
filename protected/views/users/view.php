@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
 	'Users'=>array('admin'),
-	$model->uid,
+	$model->login,
 );
 
 $this->menu=array(
