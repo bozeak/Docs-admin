@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
 	//'Users'=>array('index'),
-	'Manage',
+	Yii::t('app','Manage'),
 );
 
 $this->menu=array(
@@ -23,7 +23,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Users</h1>
+<h1><?php echo Yii::t('app','Manage Users'); ?></h1>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'users-grid',

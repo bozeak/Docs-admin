@@ -19,7 +19,12 @@
  * @version $Id: $
  */
 return array (
+  'Delete Users' => 'Șterge utilizator',
+  'Manage' => 'Administrare',
+  'Manage Users' => 'Administrează utilizatorii',
+  'Users' => 'Utilizatori',
+  'View User' => 'Vizualizează',
+  'Zona Administrativa' => '',
   'Create Users' => 'Adaugă utilizator',
   'Update Users' => 'Modifică utilizator',
-  'Zona Administrativa' => '',
 );
