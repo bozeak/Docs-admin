@@ -13,7 +13,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('subdiv')); ?>:</b>
-	<?php echo CHtml::encode($data->subdiv0->name); ?>
+	<?php echo CHtml::encode((isset($data->subdiv0))?$data->subdiv0->name:""); ?>
 	<br />
 
 

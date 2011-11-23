@@ -19,14 +19,14 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'login',
-		'password',
+		//'password',
 		array(
                     'name'=>'rid',
                     'value'=>$model->r->rid_name,
                 ),
                 array(
                     'name'=>'subdiv',
-                    'value'=>$model->subdiv0->name,
+                    'value'=>(isset($model->subdiv0))?$model->subdiv0->name:"",
                 ),
 	),
 )); ?>

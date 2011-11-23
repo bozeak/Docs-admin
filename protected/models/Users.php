@@ -14,88 +14,86 @@
  * @property ISubdiv $subdiv0
  * @property URoles $r
  */
-class Users extends CActiveRecord
-{
-	/**
-	 * Returns the static model of the specified AR class.
-	 * @return Users the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
+class Users extends CActiveRecord {
 
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return 'u_users';
-	}
+    /**
+     * Returns the static model of the specified AR class.
+     * @return Users the static model class
+     */
+    public static function model($className=__CLASS__) {
+        return parent::model($className);
+    }
 
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('login, password, rid, subdiv', 'required'),
-			//array('rid, subdiv', 'numerical', 'integerOnly'=>true),
-			array('login, password', 'length', 'max'=>255),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('uid, login, password, rid, subdiv', 'safe', 'on'=>'search'),
-		);
-	}
+    /**
+     * @return string the associated database table name
+     */
+    public function tableName() {
+        return 'u_users';
+    }
 
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-			'subdiv0' => array(self::BELONGS_TO, 'Subdiv', 'subdiv'),
-			'r' => array(self::BELONGS_TO, 'Roles', 'rid'),
-		);
-	}
+    /**
+     * @return array validation rules for model attributes.
+     */
+    public function rules() {
+        // NOTE: you should only define rules for those attributes that
+        // will receive user inputs.
+        return array(
+            array('login, password, rid, subdiv', 'required'),
+            //array('rid, subdiv', 'numerical', 'integerOnly'=>true),
+            array('login, password', 'length', 'max' => 255),
+            // The following rule is used by search().
+            // Please remove those attributes that should not be searched.
+            array('uid, login, password, rid, subdiv', 'safe', 'on' => 'search'),
+        );
+    }
 
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'uid' => 'Id',
-			'login' => 'Login',
-			'password' => 'Parola',
-			'rid' => 'Rolul în sistem',
-			'subdiv' => 'Subdiviziunea',
-		);
-	}
+    /**
+     * @return array relational rules.
+     */
+    public function relations() {
+        // NOTE: you may need to adjust the relation name and the related
+        // class name for the relations automatically generated below.
+        return array(
+            'subdiv0' => array(self::BELONGS_TO, 'Subdiv', 'subdiv'),
+            'r' => array(self::BELONGS_TO, 'Roles', 'rid'),
+        );
+    }
 
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
+    /**
+     * @return array customized attribute labels (name=>label)
+     */
+    public function attributeLabels() {
+        return array(
+            'uid' => 'Id',
+            'login' => 'Login',
+            'password' => 'Parola',
+            'rid' => 'Rolul în sistem',
+            'subdiv' => 'Subdiviziunea',
+        );
+    }
 
-		$criteria=new CDbCriteria;
+    /**
+     * Retrieves a list of models based on the current search/filter conditions.
+     * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+     */
+    public function search() {
+        // Warning: Please modify the following code to remove attributes that
+        // should not be searched.
 
-		$criteria->compare('uid',$this->uid);
-		$criteria->compare('login',$this->login,true);
-		$criteria->compare('password',$this->password,true);
-		$criteria->compare('rid',$this->rid);
-		$criteria->compare('subdiv',$this->subdiv);
+        $criteria = new CDbCriteria;
 
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
+        $criteria->compare('uid', $this->uid);
+        $criteria->compare('login', $this->login, true);
+        $criteria->compare('password', $this->password, true);
+        $criteria->compare('rid', $this->rid);
+        $criteria->compare('subdiv', $this->subdiv);
+
+        return new CActiveDataProvider($this, array(
+                    'criteria' => $criteria,
+                    'pagination' => array(
+                        'pageSize' => 30,
+                    ),
+                ));
+    }
+
 }

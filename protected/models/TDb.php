@@ -23,6 +23,7 @@
  * @property string $note
  * @property string $dossier
  * @property integer $author
+ * @property integer $author
  */
 class TDb extends CActiveRecord {
 
@@ -48,7 +49,7 @@ class TDb extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('subdiv, nr_reg, date_reg, date_doc, elab, id_elab, address, nr_cadastr, tel, content, responsabil, get_exec, nr_respons, date_respons, respons_type, note, dossier, author', 'required'),
+            array('subdiv, nr_reg, date_reg, date_doc, elab, id_elab, address, nr_cadastr, tel, content, responsabil, get_exec, nr_respons, date_respons, respons_type, note, dossier, author','date_add', 'required'),
             array('author', 'numerical', 'integerOnly' => true),
             array('subdiv, respons_type', 'length', 'max' => 2),
             array('nr_reg', 'length', 'max' => 7),
@@ -60,7 +61,7 @@ class TDb extends CActiveRecord {
             array('dossier', 'length', 'max' => 50),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, subdiv, nr_reg, date_reg, date_doc, elab, id_elab, address, nr_cadastr, tel, content, responsabil, get_exec, nr_respons, date_respons, respons_type, note, dossier, author', 'safe', 'on' => 'search'),
+            array('id, subdiv, nr_reg, date_reg, date_doc, elab, id_elab, address, nr_cadastr, tel, content, responsabil, get_exec, nr_respons, date_respons, respons_type, note, dossier, author, date_add', 'safe', 'on' => 'search'),
         );
     }
 
@@ -98,6 +99,7 @@ class TDb extends CActiveRecord {
             'note' => 'Note',
             'dossier' => 'Dossier',
             'author' => 'Author',
+            'date_add'=>'Data adaugarii',
         );
     }
 
@@ -130,6 +132,7 @@ class TDb extends CActiveRecord {
         $criteria->compare('note', $this->note, true);
         $criteria->compare('dossier', $this->dossier, true);
         $criteria->compare('author', $this->author);
+        $criteria->compare('date_add', $this->date_add);
 
         return new CActiveDataProvider($this, array(
                     'criteria' => $criteria,
@@ -138,9 +141,9 @@ class TDb extends CActiveRecord {
 
     public function searchAll() {
         $criteria = new CDbCriteria;
-        if (isset($_GET['date_reg'])) {
-            $criteria->condition = "subdiv=:subdiv AND date_reg=:date_reg";
-            $criteria->params = array(':subdiv' => $_GET['subdiv'], ':date_reg' => $_GET['date_reg']);
+        if (isset($_GET['date_add'])) {
+            $criteria->condition = "subdiv=:subdiv AND date_add=:add";
+            $criteria->params = array(':subdiv' => $_GET['subdiv'], ':add' => $_GET['date_add']);
         }
         else if (isset($_GET['month'])) {
             $criteria->condition = "subdiv=:subdiv AND MONTH(date_reg)=:month"; // AND date_reg=:date_reg

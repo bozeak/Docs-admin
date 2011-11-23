@@ -1,19 +1,18 @@
 <?php
 $this->breadcrumbs=array(
-	'Tipraspuns'=>array('index'),
-	$model->name,
+	Yii::t('app','Tipraspuns')=>array('admin'),
+	$model->id,
 );
 
 $this->menu=array(
-	array('label'=>'List Tipraspuns', 'url'=>array('index')),
-	array('label'=>'Create Tipraspuns', 'url'=>array('create')),
-	array('label'=>'Update Tipraspuns', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Tipraspuns', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Tipraspuns', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Create Tipraspuns'), 'url'=>array('create')),
+	array('label'=>Yii::t('app','Update Tipraspuns'), 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Delete Tipraspuns'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>Yii::t('app','Manage Tipraspuns'), 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Tipraspuns #<?php echo $model->id; ?></h1>
+<h1><?php echo Yii::t('app','View Tipraspuns').' '.$model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

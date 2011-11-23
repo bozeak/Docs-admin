@@ -1,15 +1,14 @@
 <?php
 $this->breadcrumbs=array(
-	'Tipraspuns'=>array('index'),
-	'Create',
+	Yii::t('app','Tipraspuns')=>array('admin'),
+	Yii::t('app','Create'),
 );
 
 $this->menu=array(
-	array('label'=>'List Tipraspuns', 'url'=>array('index')),
-	array('label'=>'Manage Tipraspuns', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Manage Tipraspuns'), 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Tipraspuns</h1>
+<h1><?php echo Yii::t('app','Create Tipraspuns') ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

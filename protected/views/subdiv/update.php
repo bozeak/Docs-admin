@@ -1,18 +1,18 @@
 <?php
 $this->breadcrumbs=array(
-	'Subdivs'=>array('index'),
+	Yii::t('app','Subdivs')=>array('admin'),
 	$model->name=>array('view','id'=>$model->id),
-	'Update',
+	Yii::t('app','Update'),
 );
 
 $this->menu=array(
-	array('label'=>'List Subdiv', 'url'=>array('index')),
-	array('label'=>'Create Subdiv', 'url'=>array('create')),
-	array('label'=>'View Subdiv', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Subdiv', 'url'=>array('admin')),
+	//array('label'=>Yii::t('app','List Subdiv'), 'url'=>array('index')),
+	array('label'=>Yii::t('app','Create Subdiv'), 'url'=>array('create')),
+	array('label'=>Yii::t('app','View Subdiv'), 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Manage Subdiv'), 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Subdiv <?php echo $model->id; ?></h1>
+<h1><?php echo Yii::t('app','Update Subdiv').' '.$model->name; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

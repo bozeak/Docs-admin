@@ -17,12 +17,12 @@ $list = Subdiv::model()->findAll();
 
                 <td class="centering"><?php
         $today_day = date('Y-m-d');
-        $conditions = 'subdiv=' . $item->id . ' AND date_reg="' . $today_day . '"';
+        $conditions = 'subdiv=' . $item->id . ' AND date_add="' . $today_day . '"';
         $counts_day = TDb::model()->count(array(
             'condition' => $conditions,
                 ));
         //echo $counts_day
-        echo CHtml::link(CHtml::encode($counts_day), array('tDb/list', 'subdiv' => $item->id, 'date_reg' => $today_day))
+        echo CHtml::link(CHtml::encode($counts_day), array('tDb/list', 'subdiv' => $item->id, 'date_add' => $today_day))
             ?></td>
 
                 <td class="centering"><?php
@@ -88,7 +88,7 @@ $list = Subdiv::model()->findAll();
         </tr>
     </table>
 </div>
-
+<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
 <script type="text/javascript">
     $(function() {
         $("#main_table tr:odd").addClass("odd");

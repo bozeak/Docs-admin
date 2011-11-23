@@ -1,18 +1,17 @@
 <?php
 $this->breadcrumbs=array(
-	'Tipraspuns'=>array('index'),
-	$model->name=>array('view','id'=>$model->id),
-	'Update',
+	Yii::t('app','Tipraspuns')=>array('admin'),
+	$model->id=>array('view','id'=>$model->id),
+	Yii::t('app','Update'),
 );
 
 $this->menu=array(
-	array('label'=>'List Tipraspuns', 'url'=>array('index')),
-	array('label'=>'Create Tipraspuns', 'url'=>array('create')),
-	array('label'=>'View Tipraspuns', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Tipraspuns', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Create Tipraspuns'), 'url'=>array('create')),
+	array('label'=>Yii::t('app','View Tipraspuns'), 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Manage Tipraspuns'), 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Tipraspuns <?php echo $model->id; ?></h1>
+<h1><?php echo Yii::t('app','Update Tipraspuns').' '. $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

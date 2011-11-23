@@ -5,7 +5,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note"><?php echo Yii::t('app','Fields with <span class="required">*</span> are required.') ?></p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -17,13 +17,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'grad'); ?>
-		<?php echo $form->textField($model,'grad'); ?>
+		<?php echo $form->dropDownList($model,'grad', CHtml::listData(Grad::model()->findAll(), 'id', 'md'), array('empty'=>'--Alegeti--')); ?>
 		<?php echo $form->error($model,'grad'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'subdiv'); ?>
-		<?php echo $form->textField($model,'subdiv'); ?>
+		<?php echo $form->dropDownList($model,'subdiv', CHtml::listData(Subdiv::model()->findAll(), 'id', 'name'), array('empty'=>'--Alegeti--')); ?>
 		<?php echo $form->error($model,'subdiv'); ?>
 	</div>
 

@@ -1,18 +1,18 @@
 <?php
 $this->breadcrumbs=array(
-	'Responsabils'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
+	Yii::t('app','Responsabils')=>array('admin'),
+	$model->fullname=>array('view','id'=>$model->id),
+	Yii::t('app','Update'),
 );
 
 $this->menu=array(
-	array('label'=>'List Responsabil', 'url'=>array('index')),
-	array('label'=>'Create Responsabil', 'url'=>array('create')),
-	array('label'=>'View Responsabil', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Responsabil', 'url'=>array('admin')),
+	//array('label'=>'List Responsabil', 'url'=>array('index')),
+	array('label'=>Yii::t('app','Create Responsabil'), 'url'=>array('create')),
+	array('label'=>Yii::t('app','View Responsabil'), 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Manage Responsabil'), 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Responsabil <?php echo $model->id; ?></h1>
+<h1><?php echo Yii::t('app','Update Responsabil').' '.$model->fullname; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

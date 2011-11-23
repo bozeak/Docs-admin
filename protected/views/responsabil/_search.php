@@ -6,23 +6,18 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'fullname'); ?>
 		<?php echo $form->textField($model,'fullname',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'grad'); ?>
-		<?php echo $form->textField($model,'grad'); ?>
+		<?php echo $form->dropDownList($model,'grad', CHtml::listData(Grad::model()->findAll(), 'id', 'md'), array('empty'=>'--Alegeti--')); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'subdiv'); ?>
-		<?php echo $form->textField($model,'subdiv'); ?>
+		<?php echo $form->dropDownList($model,'subdiv', CHtml::listData(Subdiv::model()->findAll(), 'id', 'name'), array('empty'=>'--Alegeti--')); ?>
 	</div>
 
 	<div class="row">
