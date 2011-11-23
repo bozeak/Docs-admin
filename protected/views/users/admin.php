@@ -41,7 +41,7 @@ $('.search-form form').submit(function(){
 		),
 		array(
 			'name'=>'subdiv',
-			'value'=>'$data->subdiv0->name',
+                        'value'=>'($data->subdiv0 != null)?$data->subdiv0->name:" "',
 			'filter'=>CHtml::listData(Subdiv::model()->findAll(), 'id', 'name'),
 		),
 		array(

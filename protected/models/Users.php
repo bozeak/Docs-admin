@@ -42,7 +42,7 @@ class Users extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('login, password, rid, subdiv', 'required'),
-			array('rid, subdiv', 'numerical', 'integerOnly'=>true),
+			//array('rid, subdiv', 'numerical', 'integerOnly'=>true),
 			array('login, password', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
