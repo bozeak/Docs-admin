@@ -49,7 +49,7 @@ class TDb extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('subdiv, nr_reg, date_reg, date_doc, elab, id_elab, address, nr_cadastr, tel, content, responsabil, get_exec, nr_respons, date_respons, respons_type, note, dossier, author','date_add', 'required'),
+            array('subdiv, nr_reg, date_reg, date_doc, elab, id_elab, address, nr_cadastr, tel, content, responsabil, get_exec, nr_respons, date_respons, respons_type, note, dossier, author', 'date_add', 'required'),
             array('author', 'numerical', 'integerOnly' => true),
             array('subdiv, respons_type', 'length', 'max' => 2),
             array('nr_reg', 'length', 'max' => 7),
@@ -72,7 +72,11 @@ class TDb extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
+            'subdiv2' => array(self::BELONGS_TO, 'Subdiv', 'subdiv'),
             'resp' => array(self::BELONGS_TO, 'Responsabil', 'responsabil'),
+            'tipraspuns' => array(self::BELONGS_TO, 'Tipraspuns', 'respons_type'),
+            'autor' => array(self::BELONGS_TO, 'Users', 'author'),
+            'docs0' => array(self::HAS_MANY, 'Responsabil', 'id'),
         );
     }
 
@@ -100,7 +104,7 @@ class TDb extends CActiveRecord {
             'note' => 'Notă',
             'dossier' => 'Dosar',
             'author' => 'Author',
-            'date_add'=>'Data adaugarii',
+            'date_add' => 'Data adaugarii',
         );
     }
 
@@ -145,8 +149,7 @@ class TDb extends CActiveRecord {
         if (isset($_GET['date_add'])) {
             $criteria->condition = "subdiv=:subdiv AND date_add=:add";
             $criteria->params = array(':subdiv' => $_GET['subdiv'], ':add' => $_GET['date_add']);
-        }
-        else if (isset($_GET['month'])) {
+        } else if (isset($_GET['month'])) {
             $criteria->condition = "subdiv=:subdiv AND MONTH(date_reg)=:month"; // AND date_reg=:date_reg
             $criteria->params = array(':subdiv' => $_GET['subdiv'], ':month' => $_GET['month']);
         } else {

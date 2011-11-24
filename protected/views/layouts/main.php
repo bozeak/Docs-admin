@@ -35,7 +35,7 @@
                         array('label' => 'Contact', 'url' => array('/site/contact')),
                         array('label' => Yii::t('app','Login'), 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
                         array('label' => Yii::t('app','Logout').' (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest),
-                        array('label' => 'Registrul', 'url' => 'http://46.55.83.142/'),
+                        array('label' => 'Registrul', 'url' => 'http://46.55.83.142/docs'),
                     ),
                 ));
                 ?>
