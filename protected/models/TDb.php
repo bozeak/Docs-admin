@@ -72,6 +72,7 @@ class TDb extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
+            'resp' => array(self::BELONGS_TO, 'Responsabil', 'responsabil'),
         );
     }
 
@@ -80,24 +81,24 @@ class TDb extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'id' => 'ID',
-            'subdiv' => 'Subdiv',
-            'nr_reg' => 'Nr Reg',
-            'date_reg' => 'Date Reg',
-            'date_doc' => 'Date Doc',
-            'elab' => 'Elab',
-            'id_elab' => 'Id Elab',
-            'address' => 'Address',
-            'nr_cadastr' => 'Nr Cadastr',
-            'tel' => 'Tel',
-            'content' => 'Content',
-            'responsabil' => 'Responsabil',
-            'get_exec' => 'Get Exec',
-            'nr_respons' => 'Nr Respons',
-            'date_respons' => 'Date Respons',
-            'respons_type' => 'Respons Type',
-            'note' => 'Note',
-            'dossier' => 'Dossier',
+            'id' => 'Nr. d/o',
+            'subdiv' => 'Subdiviziunea',
+            'nr_reg' => 'Nr. de înregistrare',
+            'date_reg' => 'Data înregistrării',
+            'date_doc' => 'Data cererii',
+            'elab' => 'Solicitant',
+            'id_elab' => 'Cod personal / IDNO',
+            'address' => 'Adresa obiectului solicitat',
+            'nr_cadastr' => 'Nr. cadastral',
+            'tel' => 'Telefon de contact',
+            'content' => 'Scurta expunere',
+            'responsabil' => 'Executor',
+            'get_exec' => 'Data înmînării spre executare',
+            'nr_respons' => 'Nr. actului',
+            'date_respons' => 'Data întocmirii actului',
+            'respons_type' => 'Tipul răspunsului',
+            'note' => 'Notă',
+            'dossier' => 'Dosar',
             'author' => 'Author',
             'date_add'=>'Data adaugarii',
         );

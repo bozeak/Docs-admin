@@ -13,11 +13,21 @@ $this->breadcrumbs=array(
 	//'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'subdiv',
-		'nr_reg',
-		'date_reg',
-		'date_doc',
+		//'subdiv',
+                array(
+                    'header'=>'Nr. de înregistrare<br />Data înregistrării',
+                    'value' =>'$data->nr_reg."<br>".nl2br(Yii::app()->locale->dateFormatter->formatDateTime($data->date_reg, "long", false))',
+                    'type'=>'raw',
+                ),
+                //'nr_reg',
+		//'date_reg',
+		//'date_doc',
 		'elab',
+                array(
+                    'name'=>'responsabil',
+                    'value'=>'nl2br($data->resp->grad0->md)." ".nl2br($data->resp->fullname)."<br>".nl2br($data->resp->contacts)',
+                    'type'=>'raw',
+                ),
 		/*
 		'id_elab',
 		'address',
