@@ -2,7 +2,7 @@
 $list = Subdiv::model()->findAll();
 ?>
 <h1><?php Yii::t('app', 'Zona Administrativa'); ?></h1>
-
+<!-- Table start -->
 <div style="float: left;">
     <table id="main_table" cellspacing="0">
         <tr id="table_header">
