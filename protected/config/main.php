@@ -38,7 +38,13 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
                         'loginUrl'=>array('site/login'),
+                        'class'=>'WebUser',
 		),
+            
+                'authManager'=>array(
+                    'class'=>'PhpAuthManager',
+                    'defaultRoles'=>array('guest'),
+                ),
 		// uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(

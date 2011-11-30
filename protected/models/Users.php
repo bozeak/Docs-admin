@@ -16,6 +16,11 @@
  */
 class Users extends CActiveRecord {
 
+    const ROLE_ADMIN = 'administrator';
+    const ROLE_MODER = 'moderator';
+    const ROLE_USER = 'user';
+    const ROLE_BANNED = 'banned';
+    
     /**
      * Returns the static model of the specified AR class.
      * @return Users the static model class
@@ -96,4 +101,9 @@ class Users extends CActiveRecord {
                 ));
     }
 
+    protected function beforeValidate(){
+        $this->password = md5($this->password);
+        return parent::beforeValidate();
+    }
+    
 }
