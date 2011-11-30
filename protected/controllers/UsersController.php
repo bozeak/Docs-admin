@@ -34,6 +34,10 @@ class UsersController extends Controller
 				'actions'=>array('create','update'),
 				'users'=>array('@'),
 			),
+                        array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('zinenco'),
+			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),

@@ -70,6 +70,14 @@ return array(
 			'password' => 'bozeakico',
 			'charset' => 'utf8',
 		),
+            
+//                'db'=>array(
+//			'connectionString' => 'mysql:host=localhost;dbname=docs',
+//			'emulatePrepare' => true,
+//			'username' => 'docs',
+//			'password' => '123456',
+//			'charset' => 'utf8',
+//		),
 		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
@@ -96,6 +104,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'it@dse.md',
 	),
 );
